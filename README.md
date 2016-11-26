@@ -17,14 +17,47 @@ $ export CLOUDINARY_URL=cloudinary://
 $ bundle install
 ```
 
+The tool is powered by the config as per:
+
+```json
+{
+    "envs": {
+        "staging": {
+            "uri": "https://localhost",
+            "username": "ghost",
+            "password": "ghost",
+            "host": "10.0.0.1",
+            "port": 3306,
+            "database": "ghost"
+        },
+        "production": {
+            "username": "ghost",
+            "password": "ghost",
+            "host": "127.0.0.1",
+            "port": 3307,
+            "database": "ghost"
+        }
+    }
+}
+```
+
 Running
 --
 
+In production, given the database is all firewalled off, we use SSh tunnels:
+
+```bash
+$ ssh -L 3307:172.17.0.1:3306 core@db-host
 ```
+
+Then:
+
+```bash
 $ bundle exec ruby migrate.rb -h
-
+Usage: migrate [options]
+    -p, --post post                  Post ID id to publish
+    -c, --config-file path           Config file
 ```
-
 
 Licence
 --
