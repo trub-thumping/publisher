@@ -1,4 +1,4 @@
-publisher
+Publisher
 ==
 
 | who       | what |
@@ -6,6 +6,24 @@ publisher
 | dockerhub | https://hub.docker.com/r/jspc/publisher/   |
 | circleci  | https://circleci.com/gh/jspc/publisher   |
 | licence   | MIT   |
+
+
+Installation and Configuration
+--
+
+```bash
+$ # Get from CLOUDINARY dashboard
+$ export CLOUDINARY_URL=cloudinary://
+$ bundle install
+```
+
+Running
+--
+
+```
+$ bundle exec ruby migrate.rb -h
+
+```
 
 
 Licence
@@ -32,4 +50,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
